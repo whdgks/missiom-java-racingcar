@@ -7,7 +7,7 @@ version = '1.0-SNAPSHOT'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(21) // JDK 21 사용
     }
 }
 
@@ -17,9 +17,17 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.woowacourse-projects:mission-utils:1.2.0'
+    implementation 'com.github.woowacourse-projects:mission-utils:1.2.0' // 사용자 입력/출력용
+
+    //테스트를 위한 의존성 추가 gpt사용
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.0'
+    testImplementation 'org.assertj:assertj-core:3.26.0'
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform() // JUnit5 테스트 실행
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // 인코딩 설정
 }
