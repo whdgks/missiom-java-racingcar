@@ -1,4 +1,4 @@
-package racingcar.domain;
+package racingcar.model;
 
 public class Car {
   private static final int MOVE_THRESHOLD = 4;
